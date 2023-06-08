@@ -24,7 +24,7 @@ const StyledSquare = styled.div`
     width: 255px;
     height: 216px;
     border-top: 5px solid ${props => props.color};
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: ${props => props.darkmode ? '#F7F9FF' : '#252B42'};
     transition: 0.4s all ease;
 `;
