@@ -1,16 +1,23 @@
 import { CARDS } from '../../constants/cards';
+import { STATS } from '../../constants/stadistics';
 import {
 	StyledAt,
 	StyledChange,
+	StyledChangeStat,
 	StyledChangeText,
 	StyledChangeUp,
 	StyledContainer,
 	StyledContainerWrapper,
 	StyledFollowers,
 	StyledImg,
+	StyledImg2,
+	StyledNumberStat,
+	StyledRectangle,
 	StyledSocial,
 	StyledSquare,
-	StyledText
+	StyledStats,
+	StyledText,
+	StyledTitle
 } from './styles';
 
 const Cards = ({
@@ -46,6 +53,29 @@ const Cards = ({
 								</StyledChangeText>
 							</StyledChange>
 						</StyledSquare>
+					</StyledContainer>
+				))}
+			</StyledContainerWrapper>
+			<StyledContainerWrapper>
+				{STATS.map(stat => (
+					<StyledContainer key={stat.id}>
+						<StyledRectangle darkmode={active}>
+							<StyledStats>
+								<StyledTitle darkmode={active}>{stat.title}</StyledTitle>
+								<StyledImg2 src={stat.src} alt={stat.alt} />
+							</StyledStats>
+							<StyledStats>
+								<StyledNumberStat darkmode={active}>
+									{stat.number}
+								</StyledNumberStat>
+								<StyledChangeStat>
+									<StyledChangeUp src={stat.svg} alt=''></StyledChangeUp>
+									<StyledChangeText colorSymbol={stat.colorSymbol}>
+										{stat.number2} Today
+									</StyledChangeText>
+								</StyledChangeStat>
+							</StyledStats>
+						</StyledRectangle>
 					</StyledContainer>
 				))}
 			</StyledContainerWrapper>
